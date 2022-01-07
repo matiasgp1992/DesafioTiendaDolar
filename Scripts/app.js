@@ -58,26 +58,32 @@ const app= Vue.createApp({
             if(time <= 60 && time >= 52){
                 this.colorSelec= "Purple"
                 this.purpleCount++
+                this.whiteCount++
                 localStorage.setItem("purple", this.purpleCount)
             } else if(time <= 51 && time >= 42){
                 this.colorSelec= "Blue"
                 this.blueCount++
+                this.whiteCount++
                 localStorage.setItem("blue", this.blueCount)
             } else if(time <= 41 && time >= 32){
                 this.colorSelec= "Green"
                 this.greenCount++
+                this.whiteCount++
                 localStorage.setItem("green", this.greenCount)
             } else if(time <= 31 && time >= 22){
                 this.colorSelec= "Yellow"
                 this.yellowCount++
+                this.whiteCount++
                 localStorage.setItem("yellow", this.yellowCount)
             } else if (time <= 21 && time >= 12){
                 this.colorSelec= "Orange"
                 this.orangeCount++
+                this.whiteCount++
                 localStorage.setItem("orange", this.orangeCount)
             } else if(time <=11 && time >= 1){
                 this.colorSelec= "Red"
                 this.redCount++
+                this.whiteCount++
                 localStorage.setItem("red", this.purpleCount)
             } else if (time == 0){
                 /* modal show with no call */
@@ -89,6 +95,7 @@ const app= Vue.createApp({
                 
                 this.colorSelec= "Grey"
                 this.greyCount++
+                this.whiteCount++
                 localStorage.setItem("grey", this.greyCount)   
             }
 
