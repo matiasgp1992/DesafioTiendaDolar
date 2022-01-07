@@ -17,13 +17,16 @@ const app= Vue.createApp({
 
             colorSelec: "",
             
-            numberRandom: ""
+            numberRandom: "",
+
+            users: []
         }
     },
     created(){
         this.randomNum();
         this.timer();
-        this.checkInit()
+        this.checkInit();
+        this.getUsers()
     },
     methods:{
         timer(){
@@ -89,7 +92,7 @@ const app= Vue.createApp({
                 localStorage.setItem("grey", this.greyCount)   
             }
 
-            if(this.blockBtn = true){
+            if(this.blockBtn){
                 this.whiteCount++
                 localStorage.setItem("white", this.whiteCount)
             }
@@ -143,6 +146,13 @@ const app= Vue.createApp({
             let modal= this.$refs.modalGrey
                 modal.style.display= "none"
                 modal.className= "modal fade"
+        },
+        getUsers(){
+            axios.get('https://jsonplaceholder.typicode.com/users')
+            .then(res => {
+                this.users= res.data
+                console.log(this.users)
+            })
         }
 
     },

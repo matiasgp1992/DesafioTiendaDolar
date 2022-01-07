@@ -8,7 +8,8 @@
     
     <!-- Style Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
     <!-- Style -->
     <link rel="stylesheet" href="./Styles/main.css">
 
@@ -80,6 +81,39 @@
                     </div>
                 </div>
 
+                <!-- Users -->
+                <div class="row col-12 justify-content-center m-0 p-0">
+                    <div class="col-12 col-md-7 colaccordion accordion-flush pt-4 pb-4" id="accordionFlushHome">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Some users who picked their color...
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushHome">
+                                <div class="accordion-body d-flex justify-content-center">
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <table class="table pb-2">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Username</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr v-for="user in users">
+                                                <th scope="row">{{user.id}}</th>
+                                                <td>{{user.username}}</td>
+                                              </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 
                 <!-- Modal -->
                 <div class="modal fade"id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -124,12 +158,30 @@
             </div>
 
         </main>
-        <footer>
-
+        <!-- <footer>
+            <a href=""><i class="bi bi-github"></i></a>
+            
+        </footer> -->
+        <footer class="footer d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top bg-black mt-0 mb-0">
+            <div class="d-none d-md-block col-md-4 d-flex align-items-center">
+              <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <img src="../Assets/athos_fondo_negro.jpg" alt="" id="logo_footer">
+              </a>
+              <span class="text-muted ps-5">&copy; 2022 Desafio TiendaDolar</span>
+            </div>
+        
+            <ul class="nav col-12 d-flex justify-content-center col-md-4 justify-content-end list-unstyled d-flex">
+              <li class="ms-3"><a class="text-muted" href="https://www.linkedin.com/in/matias-gomez-paratcha/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+              <li class="ms-3"><a class="text-muted" href="https://github.com/matiasgp1992/DesafioTiendaDolar" target="_blank"><i class="bi bi-github"></i></a></li>
+              
+            </ul>
         </footer>
 
 
     </div>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
